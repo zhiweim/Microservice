@@ -1,8 +1,8 @@
 import socket
 import requests
 from bs4 import BeautifulSoup
-HOST = socket.gethostbyname(socket.gethostname())
-PORT = 3256
+HOST = socket.gethostbyname(socket.gethostname())  # getting the current host name for the socket
+PORT = 3256  # any arbitrary port number should work, as long as the client and server are connected/binded to the same one
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((HOST, PORT))
@@ -11,6 +11,9 @@ server.listen()
 
 
 def get_location_summary(location):
+    """
+    The actual microservice; the summary from wikipedia is scraped using the request module and BeautifulSoup.
+    """
     location = location.replace(' ', '_')
     location = location.title()
     url = 'https://en.wikipedia.org/wiki/' + str(location)
