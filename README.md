@@ -4,6 +4,8 @@ Repository for CS361
 
 # Microservice receive and request data
 
+Simple wiki web scraper that takes in a location input and scrapes the first summary of the wikipedia article for that location. Built using the request module and BeautifulSoup and demo'd using sockets for sending and receiving data between server and client
+
 ## How to request data:
 
 Data requests can be made by sending a request to the server in the form of a string. If the location is a city and state located in the United States, then the format should be 'city, state'. For example, if the user wants to request location information for Portland, Oregon the format should be 'portland, oregon'. Otherwise, the location can just be a one word string. For example, the user wants to request information for Singapore, the format should be 'singapore'. 
